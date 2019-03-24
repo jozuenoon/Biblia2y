@@ -1,0 +1,599 @@
+ps 1; rodz 1,1-2,3
+ps 2; rodz 2,4-4,26
+ps 3; rodz 5,1-6,8
+ps 4; rodz 6,9-9,29
+ps 5; rodz 10,1-11,9
+ps 6; rodz 11,10-11,26
+ps 7; rodz 11,27-12,20
+ps 8; rodz 13-14
+ps 9; rodz 15-16
+ps 10; rodz 17
+ps 11; rodz 18,1-18,15
+ps 12; rodz 18,16-19,38
+ps 13; rodz 20-21
+ps 14; rodz 22-23
+ps 15; rodz 24-25,11
+ps 16; rodz 25,12-25,18
+ps 17; rodz 25,19-26,35
+ps 18; rodz 27-28
+ps 19; rodz 29-31
+ps 20; rodz 32-33
+ps 21; rodz 34-35
+ps 22; rodz 36,1-37,1
+ps 23; rodz 37,2-38,30
+ps 24; rodz 39-40
+ps 25; rodz 41-42
+ps 26; rodz 43-44
+ps 27; rodz 45-46
+ps 28; rodz 47-48
+ps 29; rodz 49-50
+ps 30;
+ps 31;
+ps 32; wy 1-2
+ps 33; wy 3-4
+ps 34; wy 5,1-6,27
+ps 35; wy 6,28-9,35
+ps 36; wy 10-11
+ps 37; wy 12,1-30
+ps 38; wy 12,31-14,31
+ps 39; wy 15,1-21
+ps 40; wy 15,22-17,7
+ps 41; wy 17,8-18,27
+ps 42; wy 19-20
+ps 43; wy 21-23
+ps 44; wy 24,1-11
+ps 45; wy 24,12-25,40
+ps 46; wy 26-27
+ps 47; wy 28-29
+ps 48; wy 30-31
+ps 49; wy 32-33
+ps 50; wy 34
+ps 51; wy 35-36
+ps 52; wy 37-38
+ps 53; wy 39
+ps 54; wy 40
+ps 55;
+ps 56;
+ps 57; kapl 1-2
+ps 58; kapl 3
+ps 59; kapl 4,1-5,13
+ps 60; kapl 5,14-6,7
+ps 61; kapl 6,8-7,38
+ps 62; kapl 8-9
+ps 63; kapl 10
+ps 64; kapl 11-12
+ps 65; kapl 13-14
+ps 66; kapl 15-16
+ps 67; kapl 17-18
+ps 68; kapl 19-20
+ps 69; kapl 21-22
+ps 70; kapl 23,1-24,9
+ps 71; kapl 24,10-25,55
+ps 72; kapl 26
+ps 73; kapl 27
+ps 74;
+ps 75;
+ps 76; li 1-2
+ps 77; li 3-4
+ps 78; li 5-6
+ps 79; li 7
+ps 80; li 8,1-9,14
+ps 81; li 9,15-10,36
+ps 82; li 11-12
+ps 83; li 13-14
+ps 84; li 15
+ps 85; li 16-17
+ps 86; li 18-19
+ps 87; li 20-21
+ps 88; li 22-24
+ps 89; li 25
+ps 90; li 26-27
+ps 91; li 28-29
+ps 92; li 30-31
+ps 93; li 32-33
+ps 94; li 34-35
+ps 95; li 36
+ps 96;
+ps 97;
+ps 98; powt 1
+ps 99; powt 2-3
+ps 100; powt 4,1-43
+ps 101; powt 4,44-5,33
+ps 102; powt 6-7
+ps 103; powt 8-9
+ps 104; powt 10-11
+ps 105; powt 12,1-14,2
+ps 106; powt 14,3-16,17
+ps 107; powt 16,18-18,22
+ps 108; powt 19-20
+ps 109; powt 21-22
+ps 110; powt 23
+ps 111; powt 24-25
+ps 112; powt 26
+ps 113; powt 27-28
+ps 114; powt 29-30
+ps 115; powt 31,1-29
+ps 116; powt 31,30-33,29
+ps 117; powt 34
+ps 118;
+ps 119;
+ps 120; joz 1
+ps 121; joz 2
+ps 122; joz 3-5,12
+ps 123; joz 5,13-7
+ps 124; joz 8
+ps 125; joz 9-10
+ps 126; joz 11-12
+ps 127; joz 13
+ps 128; joz 14-15
+ps 129; joz 16-17
+ps 130; joz 18-19
+ps 131; joz 20-21
+ps 132; joz 22-23
+ps 133; joz 24
+ps 134;
+ps 135;
+ps 136; sedz 1-2,5
+ps 137; sedz 2,6-3,6
+ps 138; sedz 3,7-5,31
+ps 139; sedz 6-7
+ps 140; sedz 8
+ps 141; sedz 9,1-10,5
+ps 142; sedz 10,6-12,15
+ps 143; sedz 13-14
+ps 144; sedz 15-16
+ps 145; sedz 17-18
+ps 146; sedz 19
+ps 147; sedz 20-21
+ps 148;
+ps 149;
+ps 150; rut 1
+przy 1,1-7; rut 2
+przy 1,8-33; rut 3
+przy 2; rut 4
+przy 3;
+przy 4;
+przy 5-6,19; 1sam 1-2,11
+przy 6,20-35; 1sam 2,12-4,1
+przy 7; 1sam 4,1-5,12
+przy 8; 1sam 6-7
+przy 9; 1sam 8-9
+przy 10; 1sam 10-12
+przy 11; 1sam 13,1-14,48
+przy 12; 1sam 14,49-15,35
+przy 13; 1sam 16-17
+przy 14; 1sam 18-19
+przy 15,1-29; 1sam 20-21
+przy 15,30-33; 1sam 22-23
+przy 16; 1sam 24-25
+przy 17; 1sam 26-27
+przy 18; 1sam 28-29
+przy 19; 1sam 30-31
+przy 20;
+przy 21;
+przy 22,1-16; 2sam 1-2
+przy 22,17-29; 2sam 3-4
+przy 23; 2sam 5-7
+przy 24,1-22; 2sam 8-9
+przy 24,23-34; 2sam 10-11
+przy 25; 2sam 12
+przy 26; 2sam 13-14
+przy 27; 2sam 15-16
+przy 28; 2sam 17 - 18
+przy 29; 2sam 19-20
+przy 30; 2sam 21
+przy 31,1-9; 2sam 22-23,7
+przy 31,10-31; 2sam 23,8-23,39
+ps 1; 2sam 24
+ps 2;
+ps 3;
+ps 4; 1k 1-2
+ps 5; 1k 3-4
+ps 6; 1k 5-6
+ps 7; 1k 7
+ps 8; 1k 8-9
+ps 9; 1k 10-11
+ps 10; 1k 12-13
+ps 11; 1k 14
+ps 12; 1k 15,1-16,20
+ps 13; 1k 16,21-17,24
+ps 14; 1k 18-19
+ps 15; 1k 20-21
+ps 16; 1k 22
+ps 17;
+ps 18;
+ps 19; 2k 1-2
+ps 20; 2k 3-4
+ps 21; 2k 5-6
+ps 22; 2k 7-8
+ps 23; 2k 9-10
+ps 24; 2k 11-12
+ps 25; 2k 13-14
+ps 26; 2k 15-16
+ps 27; 2k 17
+ps 28; 2k 18
+ps 29; 2k 19-20
+ps 30; 2k 21
+ps 31; 2k 22,1-23,35
+ps 32; 2k 23,36-25,30
+ps 33;
+ps 34;
+ps 35; 1kro 1-2
+ps 36; 1kro 3-4
+ps 37; 1kro 5-6
+ps 38; 1kro 7-8
+ps 39; 1kro 9
+ps 40; 1kro 10
+ps 41; 1kro 11-12
+ps 42; 1kro 13-14
+ps 43; 1kro 15-16
+ps 44; 1kro 17
+ps 45; 1kro 18-19
+ps 46; 1kro 20-22,1
+ps 47; 1kro 22,2-22,19
+ps 48; 1kro 23-24
+ps 49; 1kro 25-26
+ps 50; 1kro 27-28
+ps 51; 1kro 29
+ps 52;
+ps 53;
+ps 54; 2kro 1-2
+ps 55; 2kro 3,1-5,1
+ps 56; 2kro 5,2-6,42
+ps 57; 2kro 7
+ps 58; 2kro 8
+ps 59; 2kro 9
+ps 60; 2kro 10-12
+ps 61; 2kro 13
+ps 62; 2kro 14-16
+ps 63; 2kro 17-18
+ps 64; 2kro 19-20
+ps 65; 2kro 21-22
+ps 66; 2kro 23-24
+ps 67; 2kro 25-26
+ps 68; 2kro 27-28
+ps 69; 2kro 29-30
+ps 70; 2kro 31-32
+ps 71; 2kro 33-34
+ps 72; 2kro 35-36
+ps 73;
+ps 74;
+ps 75; ezd 1-2
+ps 76; ezd 3-4
+ps 77; ezd 5-6
+ps 78; ezd 7-8
+ps 79; ezd 9-10
+ps 80;
+ps 81;
+ps 82; neh 1-2
+ps 83; neh 3-4
+ps 84; neh 5-6
+ps 85; neh 7
+ps 86; neh 8
+ps 87; neh 9
+ps 88; neh 10
+ps 89; neh 11-12
+ps 90; neh 13
+ps 91;
+ps 92;
+ps 93; est 1,1-2,18
+ps 94; est 2,19-3,15
+ps 95; est 4-5
+ps 96; est 6-7
+ps 97; est 8
+ps 98; est 9-10
+ps 99;
+ps 100;
+ps 101; hi 1-2
+ps 102; hi 3
+ps 103; hi 4-5
+ps 104; hi 6-7
+ps 105; hi 8
+ps 106; hi 9-10
+ps 107; hi 11
+ps 108; hi 12-14
+ps 109; hi 15
+ps 110; hi 16-17
+ps 111; hi 18
+ps 112; hi 19
+ps 113; hi 20-21
+ps 114; hi 22
+ps 115; hi 23-24
+ps 116; hi 25-26
+ps 117; hi 27
+ps 118; hi 28
+ps 119; hi 29-30
+ps 120; hi 31
+ps 121; hi 32-33
+ps 122; hi 34-35
+ps 123; hi 36-37
+ps 124; hi 38-39
+ps 125; hi 40,1-42,6
+ps 126; hi 42,7-42,17
+ps 127;
+ps 128;
+ps 129; koh 1,1-1,11
+ps 130; koh 1,12-2,26
+ps 131; koh 3
+ps 132; koh 4
+ps 133; koh 5,1-5,7
+ps 134; koh 5,8-6,12
+ps 135; koh 7
+ps 136; koh 8
+ps 137; koh 9,1-9,12
+ps 138; koh 9,13-10,20
+ps 139; koh 11,1-11,8
+ps 140; koh 11,9-12,8
+ps 141; koh 12,9-12,14
+ps 142;
+ps 143;
+ps 144; pnp 1,1-2,7
+ps 145; pnp 2,8-3,11
+ps 146; pnp 4,1-5,1
+ps 147; pnp 5,2-6,3
+ps 148; pnp 6,4-8,14
+ps 149;
+ps 150;
+przy 1,1-7; iz 1,1-2,5
+przy 1,8-33; iz 2,6-4,1
+przy 2; iz 4,2-5,30
+przy 3; iz 6
+przy 4; iz 7-8
+przy 5-6,19; iz 9-10
+przy 6,20-35; iz 11-12
+przy 7; iz 13,1-14,27
+przy 8; iz 14,28-17,14
+przy 9; iz 18-20
+przy 10; iz 21-23
+przy 11; iz 24-25
+przy 12; iz 26-27
+przy 13; iz 28-29
+przy 14; iz 30-31
+przy 15,1-29; iz 32-33
+przy 15,30-33; iz 34-35
+przy 16; iz 36-37
+przy 17; iz 38-39
+przy 18; iz 40,1-40,11
+przy 19; iz 40,12-41,29
+przy 20; iz 42-43
+przy 21; iz 44,1-44,23
+przy 22,1-16; iz 44,24-45,25
+przy 22,17-29; iz 46-47
+przy 23; iz 48
+przy 24,1-22; iz 49-50
+przy 24,23-34; iz 51,1-52,12
+przy 25; iz 52,13-53,12
+przy 26; iz 54-55
+przy 27; iz 56-57
+przy 28; iz 58-59
+przy 29; iz 60-61
+przy 30; iz 62-63,6
+przy 31,1-9; iz 63,7-64,12
+przy 31,10-31; iz 65,1-65,16
+ps 1; iz 65,17-66,24
+ps 2;
+ps 3;
+ps 4; jer 1
+ps 5; jer 2,1-3,5
+ps 6; jer 3,6-4,4
+ps 7; jer 4,5-5,31
+ps 8; jer 6
+ps 9; jer 7,1-8,17
+ps 10; jer 8,18-10,25
+ps 11; jer 11-12
+ps 12; jer 13
+ps 13; jer 14-15
+ps 14; jer 16-17
+ps 15; jer 18-19
+ps 16; jer 20
+ps 17; jer 21-22
+ps 18; jer 23-24
+ps 19; jer 25
+ps 20; jer 26
+ps 21; jer 27-28
+ps 22; jer 29
+ps 23; jer 30-31
+ps 24; jer 32-33
+ps 25; jer 34-35
+ps 26; jer 36
+ps 27; jer 37-38
+ps 28; jer 39,1-41,15
+ps 29; jer 41,16-43,13
+ps 30; jer 44-45
+ps 31; jer 46
+ps 32; jer 47-48
+ps 33; jer 49
+ps 34; jer 50
+ps 35; jer 51
+ps 36; jer 52
+ps 37;
+ps 38;
+ps 39; lam 1
+ps 40; lam 2
+ps 41; lam 3
+ps 42; lam 4
+ps 43; lam 5
+ps 44;
+ps 45;
+ps 46; ez 1
+ps 47; ez 2-3
+ps 48; ez 4-5
+ps 49; ez 6-7
+ps 50; ez 8
+ps 51; ez 9 - 10
+ps 52; ez 11,1-12,20
+ps 53; ez 12,21-13,23
+ps 54; ez 14
+ps 55; ez 15-16
+ps 56; ez 17-18
+ps 57; ez 19
+ps 58; ez 20
+ps 59; ez 21-22
+ps 60; ez 23-24
+ps 61; ez 25
+ps 62; ez 26-27
+ps 63; ez 28
+ps 64; ez 29-30
+ps 65; ez 31-32
+ps 66; ez 33
+ps 67; ez 34
+ps 68; ez 35,1-36,15
+ps 69; ez 36,16-37,28
+ps 70; ez 38-39
+ps 71; ez 40
+ps 72; ez 41-42
+ps 73; ez 43-44
+ps 74; ez 45-46
+ps 75; ez 47-48
+ps 76;
+ps 77;
+ps 78; da 1
+ps 79; da 2
+ps 80; da 3
+ps 81; da 4
+ps 82; da 5
+ps 83; da 6
+ps 84; da 7-9
+ps 85; da 10,1-12,4
+ps 86; da 12,5-13
+ps 87; 
+ps 88; 
+ps 89; oz 1-2
+ps 90; oz 3,1-5,7
+ps 91; oz 5,8 - 7,16
+ps 92; oz 8,1-9,9
+ps 93; oz 9,10-10,15
+ps 94; oz 11,1-11,11
+ps 95; oz 11,12-13,16
+ps 96; oz 14
+ps 97;
+ps 98;
+ps 99; jo 1-2
+ps 100; jo 3
+ps 101;
+ps 102; am 1-2
+ps 103; am 3-4
+ps 104; am 5-6
+ps 105; am 7
+ps 106; am 8-9
+ps 107;
+ps 108; ab 1
+ps 109; jon 1-2
+ps 110;  jon 3-4
+ps 111; mi 1-3
+ps 112; mi 4-5
+ps 113; mi 6-7
+ps 114; nah 1-2
+ps 115; nah 3
+ps 116; ha 1-2
+ps 117; ha 3
+ps 118; so 1-2
+ps 119; so 3
+ps 120; agg 1-2
+ps 121; za 1-2
+ps 122; za 3-4
+ps 123; za 5-6
+ps 124; za 7-8
+ps 125; za 9-10
+ps 126; za 11-12
+ps 127; za 13-14
+ps 128; ma 1-2
+ps 129; ma 3
+lk 1,1-38; 1tes 1-3
+lk 1,39-80; 1tes 4-5
+lk 2; 2tes 1-3
+lk 3,1-4,13;
+lk 4,14-5,11;
+lk 5,12-6,11; 1kor 1,1-3,4
+lk 6,12-7,10; 1kor 3,5-4,21
+lk 7,11-8,3; 1kor 5,1-6,12-20
+lk 8,4-56; 1kor 7
+lk 9,1-45; 1kor 8,1-9,23
+lk 9,46-10,24; 1kor 9,24-11,1
+lk 10,25-11,28; 1kor 11,2-34
+lk 11,29-12,12; 1kor 12,1-30
+lk 12,13-13,9; 1kor 12,31-14,40
+lk 13,10-14,24; 1kor 15
+lk 14,25-15,32; 1kor 16
+lk 16,1-17,19;
+lk 17,20-18,30; 2kor 1-2
+lk 18,31-19,48; 2kor 3-4
+lk 20,1-21,4; 2kor 5-6
+lk 21,5-22,6; 2kor 7-8
+lk 22,7-62;  2kor 9-10
+lk 22,63-23,56; 2kor 11
+lk 24; 2kor 12-13
+dz 1;
+dz 2; fi 1-2
+dz 3; fi 3-4
+dz 4; 
+dz 5; gal 1-2
+dz 6,8-8,3; gal 3,1-4,19
+dz 8; gal 4,20-6,18
+dz 9-10;
+dz 11; rz 1-2
+dz 12,1-13,12; rz 3-4
+dz 13,13-52; rz 5,1-7,6
+dz 14; rz 7,7-8
+dz 15,1-35; rz 9-10,13
+dz 15,36-16,40; rz 10,14-11
+dz 17,1-18,11; rz 12-13
+dz 18,12-19,20; rz 14,1-15,13
+dz 19,21-20,16; rz 15,14-16,27
+dz 20,17-21,14;
+dz 21,15-22,29; kol 1,1-2,3
+dz 22,30-23,35; kol 2,4-3,17
+dz 24,1-25,12; kol 3,18-4
+dz 25,13-26,32; fil 1
+dz 27;
+dz 28;
+mk 1; ef 1,1-2,10
+mk 2,1-3,19; ef 2,11-3
+mk 3,20-4,34; ef 4,1-5,20
+mk 4,35-6,6; ef 5,21-6,24
+mk 6,7-56; tyt 1-3
+mk 7,1-8,21;
+mk 8,22-9,32;
+mk 9,33-10,31; 1tym 1-2
+mk 10,32-11,26; 1tym 3-4
+mk 11,27-12,44; 1tym 5-6
+mk 13,1-14,2; 2tym 1-2
+mk 14,3-52; 2tym 3-4
+mk 14,53-15,39;
+mk 15,40-16,20; 1j 1,1-2,28
+mt 1-2; 1j 2,29-4,6
+mt 3-4; 1j 4,7-5,21
+mt 5-7,12; 2j 1
+mt 7,13-29; 3j 1
+mt 8,1-9,35; j 1,1-2,12 
+mt 9,36-11,1; j 2,13-3,36
+mt 11,2-12,14; j 4
+mt 12,15-50; j 5
+mt 13,1-53; j 6
+mt 13,54-15,28; j 7-8,11
+mt 15,29-17,13; j 8,12-59
+mt 17,14-18,35; j 9
+mt 19,1-20,16; j 10
+mt 20,17-21,22; j 11,1-54
+mt 21,23-22,33; j 11,55-12,36
+mt 22,34-23,39; j 12,37-13,30
+mt 24; j 13,31-14
+mt 25; j 15,1-16,24
+mt 26,1-56; j 16,25-17
+mt 26,57-27,26; j 18,1-19,16
+mt 27,27-61; j 19,17-20,18
+mt 27,62-28,20; j 20-21
+jk 1,1-2,13;
+jk 2,14-3,18;
+jk 4-5; ap 1,1-2,11
+judy 1; ap 2,12-3,22
+1p 1,1-2,10; ap 4-5
+1p 2,11-4,11; ap 6,1-8,1
+1p 4,11-5; ap 8,2-9,21
+2p 1-3; ap 10-11
+hebr 1,1-3,6;ap 12-13
+hebr 3,7-5,10; ap 14-15
+hebr 5,11-7;ap 16-17
+hebr 8-9; ap 18-19,10
+hebr 10-11; ap 19,11-21,8
+hebr 12-13; ap 21,9-22

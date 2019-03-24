@@ -1,0 +1,12 @@
+verify_token="<token>"
+page_access_token="<page_access_token>"
+tls_cert="<tls_cert_path>"
+tls_key="<tls_key_path>"
+
+facebook_api="https://graph.facebook.com/v2.6/me/messages?access_token=%s"
+server_port=":12345"
+database_path="<path>"
+
+books_path="data/ksiegi.txt"
+plan_path="data/plan.csv"
+text_path="data/bt.txt"
