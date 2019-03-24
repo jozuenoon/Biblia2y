@@ -15,7 +15,7 @@ import (
 )
 
 type Service interface {
-	ProcessMessages(senderId string, messages []string, tag string, messagingType string, notificationType string) error
+	ProcessMessages(senderID string, messages []string, tag string, messagingType string, notificationType string) error
 }
 
 func New(PageAccessToken, FaceBookAPI string, logger log.Logger) Service {
@@ -50,7 +50,7 @@ func messageSplitter(input string, msgLen int, r *regexp.Regexp) []string {
 	return append([]string{input[:msgLen+idx[0]+1]}, messageSplitter(input[msgLen+idx[0]+1:], msgLen, r)...)
 }
 
-func (p *service) ProcessMessages(senderId string, messages []string, tag string, messagingType string, notificationType string) error {
+func (p *service) ProcessMessages(senderID string, messages []string, tag string, messagingType string, notificationType string) error {
 	client := &http.Client{}
 	responses := make([]m.Response, 0, len(messages))
 
@@ -60,7 +60,7 @@ func (p *service) ProcessMessages(senderId string, messages []string, tag string
 		for _, msg := range messageSplitter(verses, 1000, r) {
 			response := m.Response{
 				Recipient: m.User{
-					ID: senderId,
+					ID: senderID,
 				},
 				Message: m.Message{
 					Text: msg,

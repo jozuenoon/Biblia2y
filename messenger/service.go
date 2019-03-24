@@ -20,13 +20,13 @@ import (
 )
 
 type ParseMessageInput struct {
-	SenderId  string
+	SenderID  string
 	TimeStamp int
 	Message   string
 }
 
 type ParseMessageOutput struct {
-	SenderId string
+	SenderID string
 	Message  []string
 }
 
@@ -47,8 +47,8 @@ type Service interface {
 
 func New(
 	dbPath,
-	PageAccessToken,
-	FaceBookAPI,
+	pageAccessToken,
+	facebookAPI,
 	booksPath,
 	textPath,
 	planPath string,
@@ -67,7 +67,7 @@ func New(
 		return nil, err
 	}
 	// Get poster service...
-	psvc := poster.New(PageAccessToken, FaceBookAPI, log)
+	psvc := poster.New(pageAccessToken, facebookAPI, log)
 
 	messages := make(chan *ParseMessageOutput, 50)
 
@@ -77,7 +77,10 @@ func New(
 			case <-done:
 				return
 			case msg := <-messages:
-				psvc.ProcessMessages(msg.SenderId, msg.Message, "", "RESPONSE", "REGULAR")
+				err := psvc.ProcessMessages(msg.SenderID, msg.Message, "", "RESPONSE", "REGULAR")
+				if err != nil {
+					log.Log("msg", "failed to process message", "err", err)
+				}
 			}
 		}
 	}()
@@ -89,7 +92,7 @@ func New(
 		log:             log,
 		Schedulers:      make(map[string]*SchedulerTask),
 		responses:       messages,
-		pageAccessToken: PageAccessToken,
+		pageAccessToken: pageAccessToken,
 	}
 
 	if err := s.Recover(); err != nil {
@@ -149,29 +152,29 @@ func (s *service) ParseMessage(in *ParseMessageInput) *ParseMessageOutput {
 	case verseText != "":
 		add(verseText)
 	case in.Message == startCommand:
-		add(s.Start(in.SenderId))
+		add(s.Start(in.SenderID))
 	case in.Message == stopCommand:
-		add(s.Stop(in.SenderId))
+		add(s.Stop(in.SenderID))
 	case in.Message == helpCommand:
 		add(help)
 	case strings.HasPrefix(in.Message, setTimeCommand):
-		add(s.SetTime(in.Message, in.SenderId))
+		add(s.SetTime(in.Message, in.SenderID))
 	case strings.HasPrefix(in.Message, showDayCommand):
 		for _, showDayMsg := range s.ShowDay(in.Message) {
 			add(showDayMsg)
 		}
 	case strings.HasPrefix(in.Message, setDayCommand):
-		add(s.SetDay(in.Message, in.SenderId))
+		add(s.SetDay(in.Message, in.SenderID))
 	case strings.HasPrefix(in.Message, infoCommand):
-		add(s.Info(in.SenderId))
+		add(s.Info(in.SenderID))
 	default:
 		add("Sorry I don't understand: \n" + in.Message)
 		add(help)
 	}
 
-	s.log.Log("msg", in.Message, "senderId", in.SenderId)
+	s.log.Log("msg", in.Message, "senderID", in.SenderID)
 	return &ParseMessageOutput{
-		SenderId: in.SenderId,
+		SenderID: in.SenderID,
 		Message:  out,
 	}
 }
@@ -198,7 +201,7 @@ func (s *service) Start(senderID string) string {
 	data, err := s.DB.Get([]byte(senderID), nil)
 	if err == nil {
 		var userData User
-		err := Unmarshal(data, &userData)
+		err = Unmarshal(data, &userData)
 		if err == nil {
 			message = fmt.Sprintf(
 				`You have bible verses scheduled at %s, currently you are at day %d.
@@ -242,12 +245,12 @@ If you want to reset your schedule unsubscribe with *stop* command first.`,
 }
 
 // https://graph.facebook.com/v2.6/USER_ID?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=PAGE_ACCESS_TOKEN
-func (s *service) getUserDetails(senderId string) *models.User {
+func (s *service) getUserDetails(senderID string) *models.User {
 	client := &http.Client{}
 	defaultUser := &models.User{
 		Timezone: 1,
 	}
-	fbAPI := fmt.Sprintf("https://graph.facebook.com/v2.6/%s?fields=name,first_name,last_name,timezone&access_token=%s", senderId, s.pageAccessToken)
+	fbAPI := fmt.Sprintf("https://graph.facebook.com/v2.6/%s?fields=name,first_name,last_name,timezone&access_token=%s", senderID, s.pageAccessToken)
 	req, err := http.NewRequest("GET", fbAPI, nil)
 	if err != nil {
 		// Assume CET.
@@ -277,44 +280,44 @@ func (s *service) getUserDetails(senderId string) *models.User {
 	return user
 }
 
-func MakeTask(senderId string, log log.Logger, db *leveldb.DB, bsvc bible.Service, psvc poster.Service) func() {
+func MakeTask(senderID string, log log.Logger, db *leveldb.DB, bsvc bible.Service, psvc poster.Service) func() {
 	return func() {
-		log.Log("msg", "sending message", "user_id", senderId)
+		log.Log("msg", "sending message", "user_id", senderID)
 
-		userData, err := GetUserData(senderId, db)
+		userData, err := GetUserData(senderID, db)
 		if err != nil {
-			log.Log("msg", "error while getting user data", "user_id", senderId, "err", err)
+			log.Log("msg", "error while getting user data", "user_id", senderID, "err", err)
 			return
 		}
 
 		verses, err := bsvc.GetDay(userData.CurrentDay)
 		if err != nil {
-			log.Log("msg", "error while getting verses", "user_id", senderId, "err", err)
+			log.Log("msg", "error while getting verses", "user_id", senderID, "err", err)
 			// Reset day to 0 and try again...
 			userData.CurrentDay = 0
 			verses, err = bsvc.GetDay(userData.CurrentDay)
 			if err != nil {
-				log.Log("msg", "error while getting verses for day 0", "user_id", senderId, "err", err)
+				log.Log("msg", "error while getting verses for day 0", "user_id", senderID, "err", err)
 				return
 			}
 		}
 
-		userData.CurrentDay += 1
+		userData.CurrentDay++
 		err = PutUserData(userData, db)
 		if err != nil {
-			log.Log("msg", "error while saving user progress", "user_id", senderId, "err", err)
+			log.Log("msg", "error while saving user progress", "user_id", senderID, "err", err)
 		}
 
 		err = psvc.ProcessMessages(userData.SenderID, verses, "NON_PROMOTIONAL_SUBSCRIPTION", "MESSAGE_TAG", "SILENT_PUSH")
 		if err != nil {
-			log.Log("msg", "error while sending verses", "user_id", senderId, "err", err)
+			log.Log("msg", "error while sending verses", "user_id", senderID, "err", err)
 			return
 		}
 	}
 }
 
-func (s *service) Info(senderId string) string {
-	userData, err := GetUserData(senderId, s.DB)
+func (s *service) Info(senderID string) string {
+	userData, err := GetUserData(senderID, s.DB)
 	if err != nil {
 		return "Can't find your user in database, maybe you want to `start` your schedule."
 	}
@@ -341,8 +344,8 @@ func (s *service) ShowDay(message string) []string {
 	return verses
 }
 
-func GetUserData(senderId string, db *leveldb.DB) (*User, error) {
-	data, err := db.Get([]byte(senderId), nil)
+func GetUserData(senderID string, db *leveldb.DB) (*User, error) {
+	data, err := db.Get([]byte(senderID), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -366,8 +369,8 @@ func PutUserData(userData *User, db *leveldb.DB) error {
 	return nil
 }
 
-func (s *service) SetDay(message string, senderId string) string {
-	userData, err := GetUserData(senderId, s.DB)
+func (s *service) SetDay(message string, senderID string) string {
+	userData, err := GetUserData(senderID, s.DB)
 	if err != nil {
 		return "Can't find your user in database, maybe you want to `start` your schedule."
 	}
@@ -388,8 +391,8 @@ func (s *service) SetDay(message string, senderId string) string {
 	return fmt.Sprintf("New schedule is set at day: %d. At %s", userData.CurrentDay, userData.ScheduleTime.Format("15:04"))
 }
 
-func (s *service) SetTime(msg string, senderId string) string {
-	userData, err := GetUserData(senderId, s.DB)
+func (s *service) SetTime(msg string, senderID string) string {
+	userData, err := GetUserData(senderID, s.DB)
 	if err != nil {
 		return "Can't find your user in database, maybe you want to `start` your schedule."
 	}
@@ -402,11 +405,14 @@ func (s *service) SetTime(msg string, senderId string) string {
 	userData.ScheduleTime = newTime
 
 	s.schLock.RLock()
-	currentSched := s.Schedulers[senderId]
+	currentSched := s.Schedulers[senderID]
 	currentSched.Kill()
 	s.schLock.RUnlock()
 
-	s.AddScheduler(userData)
+	err = s.AddScheduler(userData)
+	if err != nil {
+		return err.Error()
+	}
 
 	err = PutUserData(userData, s.DB)
 	if err != nil {
@@ -451,7 +457,11 @@ func (s *service) Recover() error {
 			s.log.Log("msg", "failed to unmarshall", "key", key, "err", err)
 			continue
 		}
-		s.AddScheduler(&userData)
+		err = s.AddScheduler(&userData)
+		if err != nil {
+			s.log.Log("msg", "failed to add scheduler", "key", key, "err", err)
+			continue
+		}
 		s.log.Log("msg", "revovered user", "senderID", userData.SenderID, "scheduled_at", userData.ScheduleTime)
 	}
 	return nil
@@ -465,9 +475,9 @@ func Unmarshal(b []byte, v interface{}) error {
 	return msgpack.Unmarshal(b, v)
 }
 
-func NewSchedulerTask(senderId string, log log.Logger, time time.Time, task func()) (*SchedulerTask, error) {
+func NewSchedulerTask(senderID string, log log.Logger, time time.Time, task func()) (*SchedulerTask, error) {
 	s := SchedulerTask{
-		SenderId: senderId,
+		SenderID: senderID,
 		Time:     time,
 		Task:     task,
 		log:      log,
@@ -482,7 +492,7 @@ func NewSchedulerTask(senderId string, log log.Logger, time time.Time, task func
 }
 
 type SchedulerTask struct {
-	SenderId string
+	SenderID string
 	Time     time.Time
 	Task     func()
 	CronJob  *gocron.Scheduler
@@ -525,7 +535,7 @@ func (s *SchedulerTask) run() {
 		select {
 		case <-s.CronJob.Start():
 			s.CronJob.Clear()
-			s.log.Log("msg", "cron exited unexpectedly", "sender_id", s.SenderId)
+			s.log.Log("msg", "cron exited unexpectedly", "sender_id", s.SenderID)
 		case <-s.done:
 			s.CronJob.Clear()
 			return

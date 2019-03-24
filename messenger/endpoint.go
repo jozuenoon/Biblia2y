@@ -17,7 +17,7 @@ func makeMessagesEndPoint(s Service) endpoint.Endpoint {
 					if !reflect.DeepEqual(event.Message, m.Message{}) && event.Message.Text != "" {
 						input := ParseMessageInput{
 							Message:   event.Message.Text,
-							SenderId:  event.Sender.ID,
+							SenderID:  event.Sender.ID,
 							TimeStamp: event.Timestamp}
 						s.ResponseSink() <- s.ParseMessage(&input)
 					}
